@@ -1,0 +1,29 @@
+#nav-bar{
+    margin: -16px 0px 0px 0px;
+    background-color: #378F9B;
+    height: 40px;
+    width: 100%;
+}
+
+#nav-bar ul{
+    list-style: none;
+}
+
+#nav-bar ul li{
+    float: right;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+#nav-bar ul li a{
+    display: block;
+    color: #15363A;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#nav-bar ul li a:hover{
+    color: #378F9B;
+    background-color: #15363A;
+}

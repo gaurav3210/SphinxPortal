@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Yatra+One');
+
+body{
+    margin: -16px 0px 0px 0px;
+    background-color: #FFFFFF !important;
+}
+
+
+#header{
+    background-color: #15363A;
+    color:#378F9B;
+    height:140px;
+    width: 100%
+}
+
+#header-list{
+    list-style: none;
+}
+
+#header-list li{
+    float: left;
+}
+
+
+#name{
+    margin-top: 10px;
+    font-size: 25px;
+    line-height: 40px;
+    margin-left: -40px;
+    font-family: sans-serif;
+}
+
+
+
+#bottom{
+    background-color: #000000;
+    color: #378F9B;
+    padding: 10px;
+    position:fixed;
+    bottom: 0px;
+    width:100%;
+    height: 90px;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 20px;
+}
+
+
+#logo{
+    margin-left: -30px;
+}
