@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url('home/', include('register.urls')),
+    url('dashboard/' , include('User.urls')),
 ]
