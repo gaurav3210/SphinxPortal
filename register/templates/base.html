@@ -1,14 +1,14 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
-
+{% load staticfiles %}
 <head>
-    <link rel="stylesheet" href="{{ base.css }}style.css" />
+    <link rel="stylesheet" href="{% static 'register/css/base.css' %}" >
     <title>{% block title %}User test{% endblock %}</title>
 </head>
 
 <body>
-    <div id="header">
+    <div id="nav-bar">
     {% block header %}
     {% if user.is_authenticated %}
         {% trans "Logged in" %}: {{ user.username }} 
