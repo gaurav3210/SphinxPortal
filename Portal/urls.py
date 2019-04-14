@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
     url('home/', include('register.urls')),
     url('dashboard/' , include('User.urls')),
+    path('',include('Contest.urls')),
 ]

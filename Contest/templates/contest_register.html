@@ -1,7 +1,11 @@
+{% load i18n %}
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'base.css'%}">
 <style>
 * {
   box-sizing: border-box;
@@ -81,6 +85,23 @@ button:hover {
 }
 </style>
 <body>
+
+    <div id="nav-bar">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+
+    </div>
+
+
 
 <form id="regForm" action="/action_page.php">
   <h1>Register:</h1>
