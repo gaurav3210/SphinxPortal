@@ -37,6 +37,7 @@
                 <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
                 <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
                 <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+                <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
             {% else %}
                 <li><a href="{% url 'registration_register' %}"><strong>Register</strong></a></li>
                 <li><a href="{% url 'auth_login' %}"><Strong>Admin Login</Strong></a></li>
