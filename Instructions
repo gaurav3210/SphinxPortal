@@ -1,0 +1,4 @@
+Clone the project by git clone
+Open Project folder in Pycharm.
+Download the things mention in Requrements.txt file
+Now open terminal in Pycharm and type: python manage.py runserver
