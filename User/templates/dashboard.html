@@ -1,0 +1,53 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dashboard</title>
+        <link rel="stylesheet" href="{% static 'dashboard.css'%}">
+    </head>
+    <body>
+    <div id="header">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+
+    </div>
+    <br><br><br>
+    <div id="dropdown" >
+            <button id="menu"><strong>More</strong></button>
+            <div id="dropdown-list" >
+                <ul>
+                    <li><strong>Past Contest</strong></li>
+                    <li><strong>Futute Contest</strong></li>
+                    <li><strong>Academic Detail</strong></li>
+                    <li><strong>Contect Detail</strong></li>
+                </ul>
+            </div>
+
+    </div>
+    <di id="content">
+
+    </di>
+
+    <footer id="bottom">
+        <div >
+            <strong>&copy MNNIT Allahabad, Prayagraj </strong> <br>
+            For more information go to <a href="http://www.mnnit.ac.in/" >official site</a> <br>
+            Web Team <a href="#" >click here</a> <br>
+        </div>
+    </footer>
+    </footer>
+
+    </body>
+      
+</html>        
+

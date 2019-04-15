@@ -1,0 +1,78 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Contest</title>
+    <link rel="stylesheet" href="{% static 'base.css'%}">
+    <link rel="stylesheet" href="{% static 'create_contest.css' %}" >
+</head>
+<body>
+    <div id="nav-bar">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+
+    </div>
+    <br><br>
+    <div id="main">
+        <h1>Create Contest</h1>
+        <div>
+            <form>
+                <fieldset>
+                    <legend>Contest Inforamtion</legend>
+                    <br>
+                    Contest Name:
+                    <input type="text" name="contest_name" , value="contest name">
+                    <br><br>
+                    <hr>
+
+                    <br>
+                    Contest Host:
+                    <input type="text" name="contest_host" , value="contest Host name">
+                    <br><br>
+                    <hr>
+
+                    <br>
+                    Contest Theme:
+                    <input type="text" name="contest_theme" , value="contest theme">
+                    <br><br>
+                    <hr>
+
+                    <br>
+                    Contest Id:
+                    <input type="number" name="contest_id" >
+                    <br><br>
+                    <hr>
+
+                    <br>
+                    Contest Date:
+                    <input type="date" name="contest_date"  >
+                    <br><br>
+                    <hr>
+
+                    <br>
+                    <input type="submit" value="submit" >
+
+                </fieldset>
+            </form>
+
+
+        </div>
+    </div>
+    <footer id="bottom" >
+        <br><br>
+    </footer>
+
+</body>
+</html>

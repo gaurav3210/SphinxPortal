@@ -1,0 +1,80 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sphinx Portal | MNNIT </title>
+    <!--<link rel="icon" href="mnnit_logo.png">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+     <script src="main.js"></script>-->
+    <link rel="stylesheet" href="{% static 'register/css/home.css'%}">
+</head>
+<body>
+    <div id="header">
+        <ul id="header-list">
+            <li >
+                <div id="logo">
+                   <img src="{% static 'register/img/mnnit_logo.png' %}" width="60%" height="60%"   alt="image not found">
+                </div>
+            </li>
+            <li>
+                <div id="name">
+                    <strong>MOTILAL NEHRU NATIONAL INSTITUTE OF TECHNOLOGY, ALLAHABAD </strong><br>
+                    Sphinx Portal
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <div id="nav-bar">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+                <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'registration_register' %}"><strong>Register</strong></a></li>
+                <li><a href="{% url 'auth_login' %}"><Strong>Admin Login</Strong></a></li>
+                <li><a href="{% url 'auth_login' %}"><strong>Student Login</strong></a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+    </div>
+    <div id="content">
+        <div id="introduction">
+            <h3> ABOUT SPHINX </h3>
+            <hr id="hline">
+            <br>
+            <P id="about">
+                <STRONG>SPHINX</STRONG> , being the cryptic extravaganza it is, is one of the most popular events of the tech
+fest Avishkar. It draws participation across all streams, departments and years, with 1000+
+students battling it out for the glory. The preliminary round of SPHINX was held on
+Hackerearth this year, which seems redundant given that it’s meant only for students of our
+college. So being a budding Web Developer you are, you decide to create a separate platform
+which shall serve as the portal for the prelims, and meant to be deployed on the Intranet
+Servers.
+            </P>
+
+        </div>
+        <br><br>
+        <div id="links">
+            <a href="{% url 'create_contest' %}"><Strong>Create Your Contest</Strong></a>
+            <a href="{% url 'future_contests' %}"><Strong>Future Contests</Strong></a>
+        </div>
+
+    </div>
+    <footer id="bottom">
+        <div >
+            <strong>&copy MNNIT Allahabad, Prayagraj </strong> <br>
+            For more information go to <a href="http://www.mnnit.ac.in/" >official site</a> <br>
+            Web Team <a href="#" >click here</a> <br>
+        </div>
+    </footer>
+</body>
+</html>
