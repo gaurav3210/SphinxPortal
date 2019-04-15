@@ -10,7 +10,8 @@ FOR ADMIN:
  Admin will have control to add or delete test.
  
 FOR USER/Contestant:
- A login/signup page from which they will login to portal.
+ A login/signup page from which they will login to portal with proper validation of its email address.
+
  A dashboard for :  1. Viewing their profile and academic details
                     2. Viewing their past performances.
                     3. Viewing details of future and ongoing contests.
