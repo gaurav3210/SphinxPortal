@@ -1,0 +1,7 @@
+REQUIREMENTS FOR RUNNING PROJECT:
+PYTHON 3.6
+Django	2.1.7	
+django-registration-redux	2.5	2.6
+pip	10.0.1	19.0.3
+pytz	2018.9	
+setuptools	39.1.0	
