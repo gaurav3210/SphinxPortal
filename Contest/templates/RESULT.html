@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"type="text/css"href="{% static 'register/css/base.css' %}">
+</head>
+<h2><strong>YOU SUCCESSFULLY COMPLETED YOUR CONTEST</strong></h2>
+<h3>YOUR SCORE IS: </h3>
+
+<button id="btn1"><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></button><br><br>
+<button id="btn2"><a href="{% url 'register' %}">{% trans "HOME PAGE" %}</a></button>
+
+</body>
+</html>

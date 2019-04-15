@@ -1,0 +1,68 @@
+{% load i18n %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Future Contest</title>
+    <link rel="stylesheet" href="{% static 'Contest/css/base.css'%}">
+</head>
+<body>
+    <div id="nav-bar">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+    </div>
+
+
+<div>
+    <style>
+        table, th, td {
+            margin-top: 70px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+    <table style="width:100%" >
+        <tr>
+            <th>CONTESTID</th>
+            <th>CONTESTNAME</th>
+            <th>DATE</th>
+            <th>TIME</th>
+            <th>THEME</th>
+            <th>CONTESTHOST</th>
+            <th>REGISTER</th>
+        </tr>
+        {% for contest in future %}
+        <tr>
+            <td>{{ contest.contestID }}</td>
+            <td>{{ contest.contestName }}</td>
+            <td>{{ contest.date }}</td>
+            <td>{{ contest.time }}</td>
+            <td>{{ contest.theme }}</td>
+            <td>{{ contest.contestHost }}</td>
+            <td><a href="{% url 'contest_register' %}"><Strong>Register</Strong></a></td>
+        </tr>
+        {%  endfor %}
+    </table>
+   <!--  {% for contest in future %}
+         <h3>{{ contest.time }}</h3> <h3>{{ contest.date }}</h3> <h3>{{ contest.contestID }}</h3> <h3>{{ contest.contestName }}</h3> <h3>{{ contest.contestHost }}</h3>
+        {% endfor %}-->
+
+</div>
+
+</body>
+</html>

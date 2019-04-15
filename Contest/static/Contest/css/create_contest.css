@@ -1,0 +1,26 @@
+
+#main{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 100px;
+    font-family: sans-serif;
+}
+
+#main h1{
+    color: #15363A;
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+#main legend{
+    color: #378F9B;
+    font-size: 30px;
+}
+
+#main form{
+    font-size: 20px;
+}
+
+#main hr{
+    background-color: #378F9B;
+}

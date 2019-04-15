@@ -1,0 +1,57 @@
+{% load i18n %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dashboard</title>
+        <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css'%}">
+
+    </head>
+    <body>
+    <div id="header">
+        {% block header %}
+            <ul>
+            {% if user.is_authenticated %}
+                <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+                <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+                <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+            {% endif %}
+        </ul>
+        {% endblock %}
+
+    </div>
+    <br><br><br>
+    <div id="dropdown" >
+            <button id="menu"><strong>More</strong></button>
+            <div id="dropdown-list" >
+                <ul>
+                    <li><button id="past_contest" onmouseover="past_contest()" onclick="past_contest()" ondblclick="dashboard()"><strong>Past Contest</strong></button></li>
+                    <li><button id="future_contest"><a href="{% url 'future_contests' %}"><strong>Future Contest</strong></a></button></li>
+                   <!--
+                    <li><button id="future_contest" onclick="future_contest()" ondblclick="dashboard()"><strong>Future Contest</strong></button></li>
+                    --><li><button id="academic_details" onmouseover="academic_details()" onclick="academic_details()" ondblclick="dashboard()"><strong>Academic Detail</strong></button></li>
+                    <li><button id="contact_details" onmouseover="academic_details()" onclick="contact_details()" ondblclick="dashboard()"><strong>Contact Detail</strong></button></li>
+
+                </ul>
+            </div>
+
+    </div>
+    <div id="content" align="center">
+        <h2>ENTER IN THE CONTEST</h2>
+        <a href="{% url 'contest' %}">ENTER</a>
+    </div>
+
+    <footer id="bottom">
+        <div >
+            <strong>&copy MNNIT Allahabad, Prayagraj </strong> <br>
+            For more information go to <a href="http://www.mnnit.ac.in/" >official site</a> <br>
+            Web Team <a href="#" >click here</a> <br>
+        </div>
+    </footer>
+    <script src="{% static 'dashboard/js/app.js' %}"></script>
+    </body>
+      
+</html>        
+

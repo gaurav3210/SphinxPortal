@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<form method="post" action=".">
+  {% csrf_token %} 
+  {{ form.as_p }}
+ <!--   <button id="admin">Log in as Admin</button>
+    <button id ="User">Log in as User</button>-->
+   <button type="submit">"LOGIN AS ADMIN"</button>
+</form>
+
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+{% endblock %}

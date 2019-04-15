@@ -1,0 +1,39 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'register/css/base.css' %}" >
+    <title>{% block title %}User test{% endblock %}</title>
+</head>
+
+<body>
+    <div id="header">
+    {% block header %}
+        <ul>
+        {% if user.is_authenticated %}
+            <li><a href="#"> {% trans "Logged in" %} {{ user.username }} </a></li>
+            <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
+            <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
+            <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+        {% else %}
+            <li><a href="{% url 'auth_login' %}">{% trans "Log in" %}</a></li>
+        {% endif %}
+        </ul>
+    {% endblock %}
+
+    </div>
+    <br><br>
+    <div id="content">
+    {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+    {% block footer %}
+
+    {% endblock %}
+    </div>
+</body>
+
+</html>

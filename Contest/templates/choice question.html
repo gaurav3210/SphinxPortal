@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choice Question</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Contest/css/style.css' %}">
+
+</head>
+<body>
+<div class="ChoiceQuestion">
+    <div id="Contest">
+        <h1>Contest</h1>
+        <hr style="margin-top: 50px">
+         <p id="Question">
+             <style>
+                 table, th, td {
+                     margin-top: 70px;
+                     border: 1px solid black;
+                     border-collapse: collapse;
+                 }
+                 th, td {
+                     padding: 5px;
+                     text-align: left;
+                 }
+             </style>
+        <table style="width:100%" >
+            <tr>
+                <th>CONTESTID</th>
+                <th>QUESTIONID</th>
+                <th>QUESTION</th>
+                <th>WRITE ANSWER</th>
+            </tr>
+            {% for ques in all_questions %}
+                <tr>
+                    <td>{{ ques.contestID }}</td>
+                    <td>{{ ques.questionID }}</td>
+                    <td>{{ ques.question }}</td>
+                    <td><input id="ANSWER" name="answer" type="text" placeholder="Write your answer" oninput="iscorrect(answer)"></td>
+
+                </tr>
+            {%  endfor %}
+        </table>
+        </p>
+
+
+       <div class="SUBMIT">
+           <button ><h2><a href="{%  url 'result' %}"><h3><strong>SUBMIT AND SEE YOUR RESULT</strong></h3></a></h2></button>
+      <!--      <button id="btn2"><span id="choice2"></span></button>
+            <button id="btn3"><span id="choice3"></span></button>
+            <button id="btn4"><span id="choice4"></span></button> -->
+        </div>
+        <hr style ="margin-bottom: 50px">-->
+        <footer>
+          <!--  <p id="QuestionNo">Question 1 of 50.</p>-->
+        </footer>
+    </div>
+</div>
+<!--<script src="{% static 'Contest/js/contestStatus.js' %}"></script>
+<script src="{% static 'Contest/js/Questions.js' %}"></script>
+<script src="{% static 'Contest/js/app.js' %}"></script>-->
+</body>
+</html>
