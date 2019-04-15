@@ -26,16 +26,15 @@
              </style>
         <table style="width:100%" >
             <tr>
-                <th>CONTESTID</th>
-                <th>QUESTIONID</th>
-                <th>QUESTION</th>
+
+                <th >QUESTIONID</th>
+                <th colspan="2">QUESTION</th>
                 <th>WRITE ANSWER</th>
             </tr>
             {% for ques in all_questions %}
                 <tr>
-                    <td>{{ ques.contestID }}</td>
                     <td>{{ ques.questionID }}</td>
-                    <td>{{ ques.question }}</td>
+                    <td colspan="2">{{ ques.question }}</td>
                     <td><input id="ANSWER" name="answer" type="text" placeholder="Write your answer" oninput="iscorrect(answer)"></td>
 
                 </tr>

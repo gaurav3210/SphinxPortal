@@ -16,7 +16,7 @@ def contest_register(request):
 
 
 def Contest(request):
-    all_questions = question.objects.all()
+    all_questions = question.objects.filter(contestID="1")
     context={'all_questions': all_questions}
     return render(request, "choice question.html",context);
 

@@ -44,10 +44,15 @@
 
             {% if user.is_authenticated %}
                 <ul>
+
                 <li><a href="{% url 'dashboard' %}"> {% trans "Logged in" %} {{ user.username }} </a></li>
                 <li><a href="{% url 'auth_logout' %}">{% trans "Log out" %}</a></li>
                 <li><a href="{% url 'auth_password_change' %}">{% trans "Change password" %}</a></li>
-                <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+
+                    {% if request.user.is_superuser %}
+                    {% else %}
+                        <li><a href="{% url 'dashboard' %}">{% trans "Dashboard" %}</a></li>
+                        {% endif %}
                 </ul>
             {% else %}
                 <ul>

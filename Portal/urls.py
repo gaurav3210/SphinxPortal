@@ -24,7 +24,7 @@ urlpatterns = [
   #  url(r'^register/',include('register.urls')),
   #  url(r'^logout/$', views.user_logout, name='logout'),
    url(r'^accounts/', include('registration.backends.default.urls')),
-    url('', include('register.urls')),
+    url('home/', include('register.urls')),
     url('dashboard/' , include('User.urls')),
     url(r'^',include('Contest.urls')),
 ]

@@ -13,5 +13,3 @@ def login_success(request):
     if request.user.is_staff:
         # user is an admin
         return HttpResponseRedirect(reverse("register"))
-    else:
-        return redirect(reverse("dashboard"))

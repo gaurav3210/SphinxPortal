@@ -4,7 +4,7 @@ from django.shortcuts import HttpResponse
 #from django.contrib.auth import authenticate, login, logout
 #from django.http import HttpResponseRedirect, HttpResponse
 #from django.urls import reverse
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,reverse
 from django.shortcuts import redirect, HttpResponseRedirect
 
@@ -18,14 +18,15 @@ def index(request):
 def Main(request):
     return render(request, "Main.html");
 
+@login_required
 def login_success(request):
     """
     Redirects users based on whether they are in the admins group
     """
-    if request.user.is_staff:
+    if request.user.is_superuser:
         # user is an admin
-        return HttpResponseRedirect(reverse("register"))
+        return HttpResponseRedirect(reverse("create_contest"));
     else:
-        return redirect(reverse("dashboard"))
+        return redirect(reverse("dashboard"));
 
 
