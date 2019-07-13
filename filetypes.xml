@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="purchase_email" type="PLAIN_TEXT" />
       <mapping pattern="activation_email" type="PLAIN_TEXT" />
       <mapping pattern="activation_email_subject" type="PLAIN_TEXT" />
       <mapping pattern="email" type="PLAIN_TEXT" />
