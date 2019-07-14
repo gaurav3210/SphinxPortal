@@ -27,3 +27,6 @@ A portal for hosting and organizing quizzes and interview contests
  </ul>
  After a period of time contest and its leaderboard will be removed. 
                    
+<h1>Contributors</h1>
+<a href="https://github.com/gaurav3210">Gaurav Srivastava</a>
+<a href="https://github.com/itssanat">Sanat Kumar</a>
