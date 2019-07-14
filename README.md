@@ -1,7 +1,7 @@
 # Sphinx-Portal
 A portal for hosting and organizing quizzes and interview contests
 
-
+<img src="https://github.com/gaurav3210/SphinxPortal/blob/master2/scrnli_7_14_2019_4-29-44%20PM.png">
 <p>Many times we used to see a quiz round or some mock interview round used to happen in colleges and companies.This portal is for organising and hosting that type of contests where they can conduct tests and quizzes.This portal will comprise of following things:</p>
 <ul>
  <li><h1>FOR ADMIN:</h1></li>
