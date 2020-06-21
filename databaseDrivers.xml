@@ -84,14 +84,18 @@
       <option name="auto-sync" value="true" />
     </driver>
     <driver id="sqlite.xerial">
-      <artifact name="Xerial SQLiteJDBC" use="true" />
+      <artifact name="Xerial SQLiteJDBC" use="true" version="3.31.1" />
       <option name="auto-sync" value="true" />
+      <option name="auto-commit" value="true" />
+      <option name="send-app-info" value="true" />
+      <option name="schema-control" value="AUTOMATIC" />
       <library>
         <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.20.1.1/sqlite-jdbc-3.20.1.1.jar</url>
       </library>
       <library>
         <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.20.1.1/xerial-sqlite-license.txt</url>
       </library>
+      <code-style-scheme-name>Default</code-style-scheme-name>
     </driver>
     <driver id="exasol">
       <artifact name="Exasol" use="true" />
