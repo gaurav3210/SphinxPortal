@@ -1,11 +1,12 @@
 <application>
-  <component name="FileTypeManager" version="17">
+  <component name="FileTypeManager" version="18">
     <extensionMap>
-      <mapping pattern="activation_email" type="PLAIN_TEXT" />
       <mapping pattern="activation_email_subject" type="PLAIN_TEXT" />
+      <mapping pattern="activation_email" type="PLAIN_TEXT" />
       <mapping pattern="email" type="PLAIN_TEXT" />
       <mapping pattern="purchase_email" type="PLAIN_TEXT" />
       <mapping ext="npy" type="PLAIN_TEXT" />
+      <removed_mapping ext="txt" approved="true" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
